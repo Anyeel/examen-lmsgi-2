@@ -68,9 +68,9 @@ function generarTabla(array){
     for (let i = 0; i < array.length; i++) {
         const tr = document.createElement("tr")
         
-        if (array[i].estado === "activo") {
+        if (array[i].stock > 0) {
             tr.style.backgroundColor = "green"
-        } else if (array[i].estado === "inactivo") {
+        } else {
             tr.style.backgroundColor = "red"
         }
 
@@ -85,6 +85,8 @@ function generarTabla(array){
     }
     
     document.body.appendChild(table)
+
+    
 }
 
 fetch('/cata')
