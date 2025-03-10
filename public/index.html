@@ -4,18 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo</title>
-</head>
+    <title>Página principal</title>
+    <style>
+    /* Estilos para la tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
 
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Otros estilos */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    </style>
+    
+</head>
 <body>
-    <script>
-        fetch('/vinos')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => console.log(error))
-    </script>
+    <script src="vinos.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinos</title>
+</head>
+<body>
+    <script>
+        fetch('/vinos')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+
+            //wine name
+            const h1 = document.createElement("h1")
+            h1.innerText = nombre
+            document.body.appendChild(h1)
+    
+            //wine type
+            const p = document.createElement("p")
+            p.innerText = `Tipo: ${data.tipo}`
+            document.body.appendChild(p)
+    
+            //year
+            const pYear= document.createElement("p")
+            pYear.innerText = `Año: ${data.anio}`
+            document.body.appendChild(pYear)
+            
+            //price
+            const pPrice= document.createElement("p")
+            pPrice.innerText = `Precio: ${data.precio}`
+            document.body.appendChild(pPrice)
+            
+            //stock
+            const pStock= document.createElement("p")
+            pStock.innerText = `Stock: ${data.stock}`
+            document.body.appendChild(pStock)
+
+            //image
+            const imagen = document.createElement("img")
+            imagen.src = data.imagen
+            document.body.appendChild(imagen)
+        })
+
+    </script>
+</body>
+</html>

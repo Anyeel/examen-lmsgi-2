@@ -36,9 +36,14 @@ app.get('/vinos', (req, res) => {
     res.json(vinos);
 });
 
-app.get('/catas', (req, res) => {
+app.get('/cata', (req, res) => {
     const catas = db.prepare('SELECT * FROM catas').all();
     res.json(catas);
+});
+
+app.get('/cata/:id', (req, res) => {
+  const cata = db.prepare('SELECT * FROM catas WHERE id = ?').get(req.params.id);
+  res.json(cata);
 });
 
 app.get('/vinos/:id', (req, res) => {
